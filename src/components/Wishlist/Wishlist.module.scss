@@ -1,0 +1,67 @@
+@import "~/src/styles/breakpoints";
+
+.root {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: var(--list-items-gap-x);
+  padding-right: var(--list-items-gap-x);
+  background-color: var(--light-grey);
+  transform: translateX(100%);
+  transition: transform ease-in-out 0.3s;
+  overflow: auto;
+  z-index: 9999;
+  @include breakpoint($screen-sm) {
+    width: 30rem;
+  }
+}
+
+.hide {
+  @extend .root;
+  transform: translateX(0%);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  * {
+    margin: 0;
+  }
+}
+
+.close {
+  cursor: pointer;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer {
+  margin-top: auto;
+
+  button {
+    line-height: 1;
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    border: 0;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-primary--hover);
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@import "~/src/styles/breakpoints";
+
+.product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+
+  button {
+    line-height: 1;
+    width: 100%;
+    padding: 0.75rem 0.5rem;
+    border: 0;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    cursor: pointer;
+    &:hover {
+      background-color: var(--color-primary--hover);
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  * {
+    margin: 0;
+  }
+}
+
+.price {
+  flex-shrink: 0;
+}
+
+.productImage {
+  position: relative;
+  aspect-ratio: 1 / 1;
+
+  img {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

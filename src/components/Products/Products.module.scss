@@ -1,0 +1,18 @@
+@import "~/src/styles/breakpoints";
+
+.productList {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100%, 1fr);
+  column-gap: var(--list-items-gap-x);
+  row-gap: var(--list-items-gap-y);
+  margin: 5rem 0;
+  padding: 0;
+  list-style: none;
+  @include breakpoint($screen-sm) {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(calc(33.33% - var(--list-items-gap-y)), 1fr)
+    );
+  }
+}

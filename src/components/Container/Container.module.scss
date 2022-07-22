@@ -1,0 +1,10 @@
+@import "~/src/styles/breakpoints";
+
+.root {
+  padding-left: var(--container-marges-x);
+  padding-right: var(--container-marges-x);
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
