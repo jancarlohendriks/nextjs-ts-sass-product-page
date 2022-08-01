@@ -41,7 +41,7 @@ export const Wishlist = ({ active, setState }: WishlistProps) => {
       </div>
       <div className={styles.main}>
         {products.map((product: IProduct, index: number) => (
-          <WishlistProduct key={index} product={product} />
+          <WishlistProduct key={product.id} product={product} />
         ))}
       </div>
       <div className={styles.footer}>

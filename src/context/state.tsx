@@ -25,8 +25,21 @@ const ProductsProvider = ({ children }: ProductsProviderProps) => {
   };
 
   const updateQty = (newProduct: IProduct) => {
-    const newProducts = Object.assign(products, newProduct);
-    setProducts(newProducts);
+    // const productToUpdate = products.findIndex((x) => x.id === newProduct.id);
+    const updatedProducts = products.map((product) =>
+      product.id === newProduct.id ? newProduct : product
+    );
+    console.log(`new product`, newProduct);
+    console.log(`updatedProducts`, updatedProducts);
+    setProducts(updatedProducts);
+
+    // const newProductList =
+    // const productToUpdate = products.indexOf(newProduct);
+    // console.log(productToUpdate);
+    // products[productToUpdate] = newProduct
+    // const newProducts = Object.assign(products, newProduct);
+    // const newProducts = [...products, newProduct];
+    // setProducts(newProducts);
   };
 
   const clearProduct = (id: number) => {
